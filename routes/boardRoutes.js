@@ -18,7 +18,7 @@ const {
 } = require('../controllers/boardController');
 const { protect } = require('../middleware/auth');
 
-router.use(protect);
+//router.use(protect);
 
 router.route('/')
   .get(getBoards)
