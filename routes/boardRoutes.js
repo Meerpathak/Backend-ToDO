@@ -18,13 +18,13 @@ const {
 } = require('../controllers/boardController');
 const { protect } = require('../middleware/auth');
 
-//router.use(protect);
+router.use(protect);
 
 router.route('/')
   .get(getBoards)
   .post(createBoard);
 
-router.post('/join', joinBoard);
+router.post('/join', protect, joinBoard);
 
 router.route('/:id')
   .get(getBoard)
